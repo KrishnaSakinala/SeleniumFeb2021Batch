@@ -17,6 +17,7 @@ import org.testng.annotations.Test;
 import in.at.base.BaseTest;
 import in.at.pages.HomePage;
 import in.at.util.TestDataUtil;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class AdminFunctionality extends BaseTest{
 
@@ -64,7 +65,8 @@ public class AdminFunctionality extends BaseTest{
 		Assert.assertTrue(usernames.contains(username));
 	}
 	
-	/*public void createAdmin(){
+	@Test
+	public void createAdmin(){
 		
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
@@ -80,7 +82,7 @@ public class AdminFunctionality extends BaseTest{
 		driver.findElement(By.className("btnSubmit")).click();
 		
 		Assert.assertEquals(driver.getCurrentUrl(), "http://127.0.0.1:8000/adminlogin");
-	}*/
+	}
 	
 }
 
