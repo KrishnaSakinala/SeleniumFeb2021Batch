@@ -64,30 +64,4 @@ public class AdminFunctionality extends BaseTest{
 		
 		Assert.assertTrue(usernames.contains(username));
 	}
-	
-	@Test
-	public void createAdmin(){
-		
-		WebDriverManager.chromedriver().setup();
-		WebDriver driver = new ChromeDriver();
-		driver.get("http://127.0.0.1:8000");
-		
-		driver.findElement(By.linkText("Admin")).click();
-		driver.findElement(By.linkText("SignUp")).click();
-		
-		driver.findElement(By.id("id_first_name")).sendKeys("Hazmina");
-		driver.findElement(By.id("id_last_name")).sendKeys("Patel");
-		driver.findElement(By.id("id_username")).sendKeys("Hazmina");
-		driver.findElement(By.id("id_password")).sendKeys("password");
-		driver.findElement(By.className("btnSubmit")).click();
-		
-		Assert.assertEquals(driver.getCurrentUrl(), "http://127.0.0.1:8000/adminlogin");
-	}
-	
 }
-
-/*
- * doctorAdminDashboard();
- * gotoDoctorSingup();
- * fillDoctorDeatils();
- */
